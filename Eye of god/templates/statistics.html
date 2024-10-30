@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Statistics - Eye of God</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/statistics">Statistics</a>
+    </nav>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Eye of God Logo" class="logo">
+    </div>
+
+    <h1>Scan Statistics</h1>
+
+    <!-- Lista de Estatísticas -->
+    <div class="stats">
+        <ul>
+            <li>Nmap Scans: {{ stats.nmap_scans }}</li>
+            <li>Nikto Scans: {{ stats.nikto_scans }}</li>
+            <li>Vulnerabilities Found: {{ stats.vulnerabilities_found }}</li>
+        </ul>
+    </div>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

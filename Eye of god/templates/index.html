@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Analysis Dashboard - Eye of God</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/statistics">Statistics</a>
+    </nav>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Eye of God Logo" class="logo">
+    </div>
+
+    <h1>Security Analysis Dashboard</h1>
+
+    <!-- Formulário de Nmap -->
+    <div>
+        <h2>Nmap Scan</h2>
+        <form action="/nmap_scan" method="post">
+            <label for="ip">IP Address:</label>
+            <input type="text" id="ip" name="ip" required placeholder="Enter IP for Nmap Scan">
+            <button type="submit">Run Nmap Scan</button>
+        </form>
+    </div>
+
+    <!-- Formulário de Nikto -->
+    <div>
+        <h2>Nikto Scan</h2>
+        <form action="/nikto_scan" method="post">
+            <label for="ip">IP Address:</label>
+            <input type="text" id="ip" name="ip" required placeholder="Enter IP for Nikto Scan">
+            <button type="submit">Run Nikto Scan</button>
+        </form>
+    </div>
+
+    <div>
+        <a href="/statistics">View Scan Statistics</a>
+    </div>
+</body>
+</html>
